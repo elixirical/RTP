@@ -21,21 +21,25 @@ public class MyStack {
     //removing an item from the stack
     public StudentInfo pop() {
 	     StudentInfo temp = new StudentInfo();
+	     if (numInList == 0) {
+		return null;
+	     }
 	     if (numInList == 1) {
-	        temp.setStudent(head);
-	        head.setStudent(null);
-	        tail.setStudent(null);
+		temp.setStudent(head);
+		head.setStudent(null);
+		tail.setStudent(null);
+		numInList--;
 	     } else if (numInList > 1) {
-	        temp.setStudent(head);
-	        head.setStudent(head.getNext());
+		temp.setStudent(head);
+		head.setStudent(head.getNext());
+		numInList--;
 	     }
 	     temp.setNext(null);
-	     numInList--;
 	     return temp;
     }
 
     //look at the topmost item in the stack
-    public void peek() {
+    public StudentInfo peek() {
 	     return head;
     }
 

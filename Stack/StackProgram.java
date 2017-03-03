@@ -1,10 +1,10 @@
 class StackProgram {
     public static void main (String [] args) {
 
-	     MyStack theLL = new MyStack();
+	     MyStack theStack = new MyStack();
 
-       // declare 4 different studen infos
-       StudentInfo studentOne = new StudentInfo();
+	     // declare 4 different studen infos
+	     StudentInfo studentOne = new StudentInfo();
 	     studentOne.setStudent(123435, "HAL", "9000");
 	     studentOne.setNext(null);
 
@@ -16,27 +16,30 @@ class StackProgram {
 	     studentThr.setStudent(345657, "JCN", "7000");
 	     studentThr.setNext(null);
 
-       StudentInfo studentFou = new StudentInfo();
+	     StudentInfo studentFou = new StudentInfo();
 	     studentFou.setStudent(456768, "KDO", "6000");
-       studentFou.setNext(null);
+	     studentFou.setNext(null);
 
 	     StudentInfo temp;
-
+	     
+	     temp = theStack.pop();
+	     System.out.println(temp);
+	     
 	     System.out.println("three init");
-	     theLL.push(studentOne);
-	     theLL.push(studentTwo);
-	     theLL.push(studentThr);
-	     System.out.println(theLL.peek())
+	     theStack.push(studentOne);
+	     theStack.push(studentTwo);
+	     theStack.push(studentThr);
+	     System.out.println(theStack.peek().getFirstName());
 
 	     System.out.println("new head");
-	     theLL.push(studentFou);
-	     System.out.println(theLL.peek())
+	     theStack.push(studentFou);
+	     System.out.println(theStack.peek().getFirstName());
 
 	     System.out.println("pop three");
-       temp = theLL.pop();
-       temp = theLL.pop();
-	     temp = theLL.pop();
-       System.out.println(theLL.peek())
+	     theStack.pop();
+	     theStack.pop();
+	     theStack.pop();
+	     System.out.println(theStack.peek().getFirstName());
 
     }
 }
